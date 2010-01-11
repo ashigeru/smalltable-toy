@@ -8,9 +8,6 @@
 	<version>0.1.0-SNAPSHOT</version>
 	<name>A Toy Implementation for smalltable</name>
 	<packaging>jar</packaging>
-	<properties>
-		<irenka.version>${project.version}</irenka.version>
-	</properties>
 	<pluginRepositories>
 		<pluginRepository>
 			<id>codehaus.org</id>
