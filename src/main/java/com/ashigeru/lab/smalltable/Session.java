@@ -55,7 +55,7 @@ public interface Session {
 
     /**
      * 現在のセッションを永続化する。
-     * @param modified このセッションで更新されたエンティティの一覧
+     * @param entities このセッションで作成または更新されたエンティティの一覧
      */
-    void save(Collection<? extends Entity> modified);
+    void save(Collection<? extends Entity> entities);
 }

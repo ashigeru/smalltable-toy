@@ -162,6 +162,9 @@ public class Entity implements Serializable {
          * @return 指定した参照に対する{@code Entity}を生成するためのこのクラスのオブジェクト
          */
         public static Builder create(Entity.Reference self) {
+            if (self == null) {
+                throw new IllegalArgumentException("self is null"); //$NON-NLS-1$
+            }
             return new Builder(self);
         }
 

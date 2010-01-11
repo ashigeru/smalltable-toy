@@ -56,6 +56,7 @@ public class StObject {
             throw new IllegalArgumentException("reference is null"); //$NON-NLS-1$
         }
         this.table = table;
+        this.reference = reference;
         this.source = Collections.emptyMap();
         this.modified = new HashMap<String, Object>();
     }
@@ -68,6 +69,7 @@ public class StObject {
             throw new IllegalArgumentException("source is null"); //$NON-NLS-1$
         }
         this.table = table;
+        this.reference = source.getSelfReference();
         this.source = source.getPropertyMap();
         this.modified = new HashMap<String, Object>();
     }
@@ -220,5 +222,10 @@ public class StObject {
             return modified.get(name);
         }
         return source.get(name);
+    }
+
+    @Override
+    public String toString() {
+        return String.format("StObject{ref=%s, properties=%s}", reference, toEntity().getPropertyMap());
     }
 }
