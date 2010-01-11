@@ -15,6 +15,8 @@
  */
 package com.ashigeru.lab.smalltable.local;
 
+import java.io.Serializable;
+
 import com.ashigeru.lab.smalltable.Revision;
 
 /**
@@ -24,7 +26,9 @@ import com.ashigeru.lab.smalltable.Revision;
  * </p>
  * @author ashigeru
  */
-public class LocalEntityId {
+public class LocalEntityId implements Serializable {
+
+    private static final long serialVersionUID = 929425390838734654L;
 
     private long numeric;
 
