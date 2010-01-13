@@ -156,9 +156,21 @@ public class StObject {
     }
 
     /**
-     *
+     * このオブジェクトの指定の名前を持つプロパティに値を設定する。
+     * <p>
+     * {@code value}に指定可能なオブジェクトは下記のいずれかである必要がある。
+     * </p>
+     * <ul>
+     * <li> {@code Integer}型のオブジェクト </li>
+     * <li> {@code String}型のオブジェクト </li>
+     * <li> {@code StObject}型のオブジェクト、ただし同一の{@link SmallTable}から生成されたものに限る </li>
+     * </ul>
+     * <p>
+     * {@code value}に{@code null}を指定した場合、指定の名前を持つプロパティはこのオブジェクトから除去される。
+     * </p>
      * @param name 対象のプロパティ名
      * @param value プロパティに設定する値、プロパティを削除する場合は{@code null}
+     * @throws IllegalArgumentException {@code value}に不正な値が指定された場合
      */
     public void setProperty(String name, Object value) {
         if (name == null) {
@@ -169,7 +181,7 @@ public class StObject {
     }
 
     /**
-     *
+     * 指定のプロパティに設定された値を返す。
      * @param name 対象のプロパティ名
      * @return 対応するプロパティの値、存在しない場合は{@code null}
      */
